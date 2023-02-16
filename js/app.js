@@ -78,11 +78,19 @@ document
     const claculatorField = document.getElementById("calculator-field");
     const claculatorFieldValue = claculatorField.value;
 
+    const correctOtt = document.getElementById('correct-ott');
+
+    const incorrectOtt = document.getElementById('incorrect-ott');
+
     if (ottFieldValue === claculatorFieldValue) {
-      console.log("Your OTT is matched");
-      alert("Your OTT is matched");
+      correctOtt.style.display = 'block';
+      // ottField.value = '';
+      // claculatorField.value = '';
+      incorrectOtt.style.display = 'none';
     } else {
-      console.log("Your OTT is incorrect");
-      alert("Your OTT is incorrect");
+      incorrectOtt.style.display = 'block';
+      // ottField.value = '';
+      // claculatorField.value = '';
+      correctOtt.style.display = 'none';
     }
   });
