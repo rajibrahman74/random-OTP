@@ -1,4 +1,3 @@
-
 // Convert 4 digits in random numbers
 function getOtt() {
   const ott = randomOtt();
@@ -12,11 +11,14 @@ function getOtt() {
 
 
 
+
 // Get Random
 function randomOtt() {
   const random = Math.round(Math.random() * 10000);
   return random;
 }
+
+
 
 
 
@@ -29,6 +31,7 @@ document.getElementById("generate-btn").addEventListener("click", function () {
   const ottField = document.getElementById("ott-field");
   ottField.value = randomOtt;
 });
+
 
 
 
@@ -57,5 +60,29 @@ document
       const currentCalculatorFieldValue =
         previousCalculatorFieldValue + claculatorElementValue;
       calculatorFieldValue.value = currentCalculatorFieldValue;
+    }
+  });
+
+
+
+
+
+// Match ott
+
+document
+  .getElementById("ott-submit-btn")
+  .addEventListener("click", function () {
+    const ottField = document.getElementById("ott-field");
+    const ottFieldValue = ottField.value;
+
+    const claculatorField = document.getElementById("calculator-field");
+    const claculatorFieldValue = claculatorField.value;
+
+    if (ottFieldValue === claculatorFieldValue) {
+      console.log("Your OTT is matched");
+      alert("Your OTT is matched");
+    } else {
+      console.log("Your OTT is incorrect");
+      alert("Your OTT is incorrect");
     }
   });
